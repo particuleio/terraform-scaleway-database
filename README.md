@@ -21,13 +21,14 @@ module "database" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | ~> 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
-| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | n/a |
+| <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | ~> 2.0 |
 
 ## Modules
 
