@@ -11,4 +11,6 @@ resource "scaleway_rdb_instance" "this" {
   engine         = each.value.engine
   is_ha_cluster  = lookup(each.value, "is_ha_cluster", true)
   disable_backup = lookup(each.value, "disable_backup", false)
+  tags           = lookup(each.value, "tags", [])
+  settings       = lookup(each.value, "settings", {})
 }

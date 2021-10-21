@@ -26,6 +26,7 @@ module "database" {
 
 | Name | Version |
 |------|---------|
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 | <a name="provider_scaleway"></a> [scaleway](#provider\_scaleway) | n/a |
 
 ## Modules
@@ -36,8 +37,10 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [scaleway_rdb_database.this](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/rdb_database) | resource |
 | [scaleway_rdb_instance.this](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/rdb_instance) | resource |
+| [scaleway_rdb_user.this](https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/resources/rdb_user) | resource |
 
 ## Inputs
 
