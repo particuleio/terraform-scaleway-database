@@ -14,4 +14,5 @@ output "this" {
     }
   }
   description = "A map of the scaleway_rdb_database (including their users) and scaleway_rdb_instance resources grouped by databases definitions"
+  sensitive   = true
 }
