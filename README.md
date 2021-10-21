@@ -54,5 +54,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_this"></a> [this](#output\_this) | A map of the scaleway\_rdb\_database and scaleway\_rdb\_instance resources grouped by databases definitions |
+| <a name="output_this"></a> [this](#output\_this) | A map of the scaleway\_rdb\_database (including their users) and scaleway\_rdb\_instance resources grouped by databases definitions |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
