@@ -28,6 +28,7 @@ locals {
     node_type = "DB-DEV-S"
     users     = []
     settings  = {}
+    acls      = []
   }
   databases = {
     for database_name, config in var.databases :

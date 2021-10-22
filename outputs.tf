@@ -3,7 +3,7 @@ output "this" {
     for name in keys(var.databases) : name => {
       "instance" = scaleway_rdb_instance.this[name],
       "database" = scaleway_rdb_database.this[name],
-      "acls"     = scaleway_rdb_acl.this[name],
+      "acls"     = lookup(scaleway_rdb_acl.this, name, []),
       "users" = [
         for identifier, config in local.user_by_database : {
           "username" : config.user.username,

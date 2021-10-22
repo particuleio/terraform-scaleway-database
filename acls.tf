@@ -1,5 +1,5 @@
 resource "scaleway_rdb_acl" "this" {
-  for_each = local.databases
+  for_each = { for database, config in local.databases : database => config if length(config.acls) > 0 }
 
   instance_id = scaleway_rdb_instance.this[each.key].id
 
