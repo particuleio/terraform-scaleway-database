@@ -11,10 +11,6 @@ locals {
     for config in local.user_configs :
     "${config.database}_${config.user.username}" => config
   }
-  user_computed = {
-    for identifier, config in local.user_by_database :
-    config.database => config...
-  }
   default_database = {
     name      = "default"
     node_type = "DB-DEV-S"
