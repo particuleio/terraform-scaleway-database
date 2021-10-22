@@ -1,6 +1,6 @@
 locals {
   user_configs = flatten([
-    for database, config in var.databases : [
+    for database, config in local.databases : [
       for user in config.users : {
         database = database
         user     = user
@@ -14,5 +14,15 @@ locals {
   user_computed = {
     for identifier, config in local.user_by_database :
     config.database => config...
+  }
+  default_database = {
+    name      = "default"
+    node_type = "DB-DEV-S"
+    users     = []
+    settings  = {}
+  }
+  databases = {
+    for database_name, config in var.databases :
+    database_name => merge(local.default_database, config)
   }
 }

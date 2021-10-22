@@ -1,11 +1,11 @@
 resource "scaleway_rdb_database" "this" {
-  for_each    = var.databases
+  for_each    = local.databases
   instance_id = scaleway_rdb_instance.this[each.key].id
   name        = each.key
 }
 
 resource "scaleway_rdb_instance" "this" {
-  for_each       = var.databases
+  for_each       = local.databases
   name           = each.value.name
   node_type      = lower(each.value.node_type)
   engine         = each.value.engine
