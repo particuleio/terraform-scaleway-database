@@ -31,7 +31,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_rdb"></a> [rdb](#module\_rdb) | ../../ |  |
+| <a name="module_rdb"></a> [rdb](#module\_rdb) | ../../ | n/a |
 
 ## Resources
 
