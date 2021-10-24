@@ -1,6 +1,17 @@
 # terraform-scaleway-database
 
+Terraform module to create Databases using Scaleway's [Managed Databases][scw-db].
+
+Create and configure the following:
+- Database Instance
+- Database Users
+- Database ACLs
+
+[scw-db]: https://www.scaleway.com/en/database/
+
 ## Usage
+
+The module takes a `map` of objects for each database to configure.
 
 ```hcl
 module "database" {
@@ -14,6 +25,17 @@ module "database" {
   }
 }
 ```
+
+The `locals.tf` defines default values that are merged and overriden
+by each `database` definition in the `databases` `map`.
+
+### Examples
+
+Multiple examples are available in the [`./examples`](./examples) directory.
+
+- A [simple database setup](./examples/simple/)
+- [Multiple database creation with users](./examples/users/)
+- [Database creation with ACL support](./examples/acls/)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
