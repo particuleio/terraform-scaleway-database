@@ -17,6 +17,9 @@ The module takes a `map` of objects for each database to configure.
 
 ```hcl
 module "database" {
+  source  = "particuleio/database/scaleway"
+  version = "1.1.1"  # use latest version
+
   databases = {
     main = {
       node_type      = "DB-DEV-S"
