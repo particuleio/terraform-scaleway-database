@@ -1,5 +1,7 @@
 # terraform-scaleway-database
 
+[![terraform-scaleway-database](https://github.com/particuleio/terraform-scaleway-database/actions/workflows/terraform.yml/badge.svg?branch=main)](https://github.com/particuleio/terraform-scaleway-database/actions/workflows/terraform.yml)
+
 Terraform module to create Databases using Scaleway's [Managed Databases][scw-db].
 
 Create and configure the following:
