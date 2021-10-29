@@ -5,9 +5,10 @@
 Terraform module to create Databases using Scaleway's [Managed Databases][scw-db].
 
 Create and configure the following:
-- Database Instance
+- Managed RDB Instances
 - Database Users
 - Database ACLs
+- Managed Databases
 
 [scw-db]: https://www.scaleway.com/en/database/
 
@@ -41,6 +42,7 @@ Multiple examples are available in the [`./examples`](./examples) directory.
 - A [simple database setup](./examples/simple/)
 - [Multiple database creation with users](./examples/users/)
 - [Database creation with ACL support](./examples/acls/)
+- [RDB instance with multiple databases](./examples/databases/)
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
