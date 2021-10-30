@@ -17,16 +17,17 @@ Create and configure the following:
 The module takes a `map` of objects for each database to configure.
 
 ```hcl
+# example with a single RDB instance configured with 2 managed databases
 module "database" {
   source  = "particuleio/database/scaleway"
-  version = "1.1.1"  # use latest version
+  version = "1.2.0"  # use latest version
 
   databases = {
     main = {
       node_type      = "DB-DEV-S"
       engine         = "PostgreSQL-11"
-      is_ha_cluster  = true
-      disable_backup = false
+
+      dbs = ["default", "core"]
     }
   }
 }
@@ -39,10 +40,58 @@ by each `database` definition in the `databases` `map`.
 
 Multiple examples are available in the [`./examples`](./examples) directory.
 
-- A [simple database setup](./examples/simple/)
+- [A simple database setup](./examples/simple/)
 - [Multiple database creation with users](./examples/users/)
 - [Database creation with ACL support](./examples/acls/)
 - [RDB instance with multiple databases](./examples/databases/)
+
+Below is an advanced usage of this module.
+
+```hcl
+module "database" {
+  source  = "particuleio/database/scaleway"
+  version = "1.2.0"  # use latest version
+
+  databases = {
+    main = {
+      name      = "database-with-multiple-dbs"
+      node_type = "DB-DEV-S"
+      engine    = "PostgreSQL-11"
+
+      dbs = ["default", "admin", "internal"]
+
+      acls = [
+        {
+          ip          = "1.2.3.4/32"
+          description = "Specific ACL 1"
+        },
+        {
+          ip          = "192.168.1.20/28"
+          description = "Specific ACL 2"
+        },
+      ]
+
+      users = [
+        {
+          username        = "application"
+          password_length = 16
+          is_admin        = false
+        },
+        {
+          username        = "administrator"
+          password_length = 24
+          is_admin        = true
+        },
+      ]
+    }
+    metrics = {  # second RDB instance definition
+      name      = "simple-database"
+      node_type = "DB-DEV-S"
+      engine    = "PostgreSQL-11"
+    }
+  }
+}
+```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
