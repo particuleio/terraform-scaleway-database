@@ -32,7 +32,7 @@ output "instances" {
 output "databases" {
   value = {
     for identifier, config in local.dbs_by_database :
-    scaleway_rdb_database.this[identifier].config.database => scaleway_rdb_database.this[config.database]
+    config.database => scaleway_rdb_database.this[identifier]...
   }
   description = "A map of each created scaleway_rdb_instance with each `var.databases` definition as key"
 }
