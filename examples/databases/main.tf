@@ -19,3 +19,12 @@ output "rdb" {
   value     = module.rdb.this
   sensitive = true
 }
+
+output "instances" {
+  value     = module.rdb.instances
+  sensitive = true
+}
+
+output "databases" {
+  value = module.rdb.databases
+}

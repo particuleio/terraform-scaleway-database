@@ -21,3 +21,18 @@ output "this" {
   description = "A map of the scaleway_rdb_database (including their users) and scaleway_rdb_instance resources grouped by databases definitions"
   sensitive   = true
 }
+
+output "instances" {
+  value = {
+    for name in keys(var.databases) : name => scaleway_rdb_instance.this[name]
+  }
+  description = "A map of each created scaleway_rdb_instance with each `var.databases` definition as key"
+}
+
+output "databases" {
+  value = {
+    for identifier, config in local.dbs_by_database :
+    config.database => scaleway_rdb_database.this[identifier]...
+  }
+  description = "A map of each created scaleway_rdb_instance with each `var.databases` definition as key"
+}

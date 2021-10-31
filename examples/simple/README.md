@@ -45,5 +45,6 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_instances"></a> [instances](#output\_instances) | n/a |
 | <a name="output_rdb"></a> [rdb](#output\_rdb) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

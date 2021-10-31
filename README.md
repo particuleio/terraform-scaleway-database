@@ -134,5 +134,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_databases"></a> [databases](#output\_databases) | A map of each created scaleway\_rdb\_instance with each `var.databases` definition as key |
+| <a name="output_instances"></a> [instances](#output\_instances) | A map of each created scaleway\_rdb\_instance with each `var.databases` definition as key |
 | <a name="output_this"></a> [this](#output\_this) | A map of the scaleway\_rdb\_database (including their users) and scaleway\_rdb\_instance resources grouped by databases definitions |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
