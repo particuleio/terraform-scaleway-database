@@ -23,6 +23,7 @@ output "this" {
 }
 
 output "instances" {
+  sensitive = true
   value = {
     for name in keys(var.databases) : name => scaleway_rdb_instance.this[name]
   }
