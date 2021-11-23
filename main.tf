@@ -20,4 +20,13 @@ resource "scaleway_rdb_instance" "this" {
   project_id = lookup(each.value, "project_id", null)
 
   tags = lookup(each.value, "tags", [])
+
+  dynamic "private_network" {
+    for_each = lookup(each.value, "private_network", {}) != {} ? [1] : []
+
+    content {
+      ip_net = lookup(each.value.private_networking, "ip_net", null)
+      pn_id  = lookup(each.value.private_networking, "pn_id", null)
+    }
+  }
 }
