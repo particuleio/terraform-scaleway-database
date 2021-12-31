@@ -42,6 +42,8 @@ locals {
     settings  = {}
     acls      = []
     dbs       = []
+
+    private_network = {}
   }
   databases = {
     for database_name, config in var.databases :
