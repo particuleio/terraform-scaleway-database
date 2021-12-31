@@ -10,8 +10,11 @@ resource "scaleway_rdb_instance" "this" {
   user_name = lookup(each.value, "user_name", null)
   password  = lookup(each.value, "password", null)
 
-  is_ha_cluster  = lookup(each.value, "is_ha_cluster", true)
-  disable_backup = lookup(each.value, "disable_backup", false)
+  is_ha_cluster = lookup(each.value, "is_ha_cluster", true)
+
+  disable_backup            = lookup(each.value, "disable_backup", false)
+  backup_schedule_frequency = lookup(each.value, "backup_schedule_frequency", null)
+  backup_schedule_retention = lookup(each.value, "backup_schedule_retention", null)
 
   volume_type       = lookup(each.value, "volume_type", "lssd")
   volume_size_in_gb = lookup(each.value, "volume_size_in_gb", null)
