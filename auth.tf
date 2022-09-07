@@ -1,8 +1,9 @@
 resource "random_password" "this" {
   for_each = local.user_by_database
 
-  length  = each.value.user.password_length
-  special = true
+  length      = each.value.user.password_length
+  min_numeric = 1
+  special     = true
 }
 
 resource "scaleway_rdb_user" "this" {
