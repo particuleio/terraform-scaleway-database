@@ -1,7 +1,7 @@
 resource "scaleway_rdb_instance" "this" {
   for_each = local.databases
 
-  name      = each.value.name
+  name      = try(each.value.name, each.key)
   node_type = lower(each.value.node_type)
 
   engine   = each.value.engine
