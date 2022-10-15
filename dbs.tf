@@ -4,4 +4,3 @@ resource "scaleway_rdb_database" "this" {
   instance_id = scaleway_rdb_instance.this[each.value.database].id
   name        = each.value.db
 }
-
